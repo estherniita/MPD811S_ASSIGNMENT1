@@ -1,0 +1,13 @@
+{
+  "appId": "com.namibia.ohps",
+  "appName": "tms",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

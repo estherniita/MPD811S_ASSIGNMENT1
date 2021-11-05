@@ -1,0 +1,30 @@
+ion-content {
+    --padding-top: 5%;
+    --background: #f5f2f3 !important;
+}
+
+ion-toolbar {
+    --background: #fff5f8 !important;
+    --color: #000 !important;
+}
+.add {
+    font-size: 1.2rem !important;
+}
+
+ion-card {
+    --background: transparent;
+    --color: #000;
+    border-radius: 0.5rem;
+    height: 12rem;
+    img {
+        height: 100px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+}

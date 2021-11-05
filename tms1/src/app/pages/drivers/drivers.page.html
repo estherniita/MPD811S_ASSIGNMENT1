@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="pinkish">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Drivers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2 class="ion-text-center">Drivers list</h2>
+  <section class="driver">
+    <div *ngFor="let driver of drivers; let i = index">
+      <ion-card (click)="selectDriver(i)" [ngClass]="driver.clicked ? 'selected' : ''">
+        <ion-avatar>
+          <img src="../../../assets/imgs/driver1.jpg">
+        </ion-avatar>
+        <div class="content">
+          <ion-label>Name: {{driver.name}}</ion-label>
+          <ion-label>Rate: {{driver.rate}} <ion-icon slot="" name="star"></ion-icon>
+          </ion-label>
+          <ion-label>Address: {{driver.address}}</ion-label>
+        </div>
+      </ion-card>
+    </div>
+  </section>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+     <ion-icon class="ion-text-center personicon" name="person"></ion-icon>
+     <ion-buttons slot="start">
+       <ion-button slot="icon-only" (click)="changePic()">
+         <ion-icon slot="start" name="camera"></ion-icon>
+       </ion-button>
+     </ion-buttons>
+
+     <ion-list *ngIf="user">
+       <ion-item>
+         <ion-label>Display Name: Test name </ion-label>
+         <b>{{user.displayName}}</b>
+       </ion-item>
+
+       <ion-item>
+         <ion-label>Created on: </ion-label>
+         <b>{{user.dateCreate}} </b>
+       </ion-item>
+
+     </ion-list>
+  </ion-card>
+
+  <ion-button class="logout" expand="block" shape="block" (click)="logout()">
+    <ion-icon name="log-out"></ion-icon>
+    Logout</ion-button>
+
+</ion-content>

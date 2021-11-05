@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="pinkish">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Terms of use</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 class="ion-text-center">
+     Bellow are the terms of use
+  </h1>
+
+  <ion-list *ngIf="terms">
+    <ion-card *ngFor="let term of terms; let i = index">
+      <h4>{{term.title}}</h4>
+      <p>{{term.term}}</p>
+    </ion-card>
+  </ion-list>
+
+</ion-content>

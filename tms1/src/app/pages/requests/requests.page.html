@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Requests</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="pinkish">
+      </ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/addrequest" slot="icon-only">
+        <ion-icon class="add" slot="start" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" class="ion-padding">
+  <ion-card *ngFor="let data of userdata; let i = index">
+      <img src="../../../assets/imgs/driver2.jpg">
+    <div class="content">
+      <ion-label>Driver name: {{data.driverName}}</ion-label>
+      <ion-label>Destination: {{data.destination}}</ion-label>
+      <ion-label>Date Created: {{data.date}}</ion-label>
+    </div>
+  </ion-card>
+</ion-content>

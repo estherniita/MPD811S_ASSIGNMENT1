@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" color="pinkish">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Post Request</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class=" signup no-scroll ion-padding" fullscreen="true" scroll-y="true">
+  <!-- form -->
+  <form [formGroup]="requestForm" class="ion-padding">
+
+    <div class="outter">
+      <ion-input required formControlName="destination" placeholder="Enter destination" type="text" required>
+      </ion-input>
+    </div>
+    <div *ngIf="requestForm.hasError('required', 'destination') && submitted" class="invalid-feedback">
+      Destination is required
+    </div>
+  </form>
+
+
+  <section class="driver">
+    <h2 *ngIf="drivers.length !== 0" class="ion-text-center">Choose driver</h2>
+    <div *ngFor="let driver of drivers; let i = index">
+      <ion-card (click)="selectDriver(i)" [ngClass]="driver.clicked ? 'selected' : ''">
+        <ion-avatar>
+          <img src="../../../assets/imgs/driver1.jpg">
+        </ion-avatar>
+        <div class="content">
+          <ion-label>Name: {{driver.name}}</ion-label>
+          <ion-label>Rate: {{driver.rate}} <ion-icon slot="" name="star"></ion-icon>
+          </ion-label>
+          <ion-label>Address: {{driver.address}}</ion-label>
+        </div>
+      </ion-card>
+    </div>
+  </section>
+
+  <div class="buttons">
+    <div class="ion-text-center">
+      <ion-button class="login" color="buttonblue" [routerLink]="['/login']">
+        <ion-icon slot="start" name="arrow-redo-outline"></ion-icon>
+        Cancel
+      </ion-button>
+    </div>
+    <div class="ion-text-center">
+      <ion-button class="signup" (click)="post()" color="buttonblue">
+        <ion-icon slot="start" name="add"></ion-icon>
+        Post
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,102 @@
+.login {
+  background: url("../../../assets/imgs/driver.jpg") no-repeat;
+  // background: #040302;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.inner-div {
+  background: #0f0f0fd0;
+  z-index: 800;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+ion-toolbar,
+ion-content {
+  --background: transparent;
+  --color: #fff;
+}
+
+.scroll-content {
+  --padding-bottom: 0 !important;
+}
+
+.main {
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 0 12%;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    --color: #fff;
+  }
+}
+
+.outter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+  color: #181818;
+  background: #fff;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  height: 52px;
+  font-weight: normal;
+  border-radius: 4rem;
+
+  .ion-input {
+    font-size: 17px !important;
+  }
+}
+
+.passwordIcon {
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+
+  .buttonhome {
+    text-transform: capitalize !important;
+    --background: #fff;
+    font-weight: normal;
+    margin: 0.5rem 0;
+    color: #000;
+    width: 10rem;
+    height: 2.5rem;
+  }
+}
+
+.invalid-login {
+  position: relative;
+  color: #ffffff;
+  margin: -0.5rem 0 0 1rem;
+  
+}
+
+a {
+  font-weight: normal;
+  color: #fff;
+}

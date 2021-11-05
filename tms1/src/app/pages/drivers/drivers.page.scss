@@ -1,0 +1,25 @@
+ion-content {
+    --background: #f5f2f3 !important;
+}
+
+ion-toolbar {
+    --background: #fff5f8 !important;
+    --color: #000 !important;
+}
+
+h2 {
+    color: #000;
+}
+
+ion-card {
+    --background: transparent;
+    --color: #000;
+    border-radius: 3rem;
+    display: flex;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+    }
+}

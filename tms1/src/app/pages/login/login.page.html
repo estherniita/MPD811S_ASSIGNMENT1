@@ -1,0 +1,54 @@
+<!-- <section> -->
+  <!-- <div class="img">
+    <img src="../../assets/imgs/mtc_logo_white.png" />
+  </div> -->
+
+  <!-- <div class="inner"> -->
+    <ion-content class="login no-scroll" fullscreen="true" scroll-y="true">
+     <section class="main">
+ <h1 class="ion-text-center">TMS</h1>
+       <div class="form">
+         <form [formGroup]="loginForm">
+
+           <div class="outter">
+             <ion-input class="ion-input" required formControlName="email" placeholder="test@test.com" type="email">
+             </ion-input>
+           </div>
+
+           <div class="invalid-login" *ngIf="loginForm.hasError('required', 'email') && submitted">
+           Username is required
+           </div>
+
+           <div class="invalid-login" *ngIf="loginForm.hasError('pattern', 'email') && submitted">
+          Must be a valid email address
+           </div>
+
+           <div class="outter">
+             <ion-input class="ion-input" required formControlName="password" placeholder="Password" [type]="pwdType"
+               type="password">
+             </ion-input>
+             <ion-icon slot="end" ngDefaultControl [name]="pwdIcon" class="passwordIcon" (click)='showHidePWD()'>
+             </ion-icon>
+           </div>
+           <div class="invalid-login" *ngIf="loginForm.hasError('required', 'password') && submitted">
+             Password is required
+           </div>
+         </form>
+
+         <div class="buttons">
+           <ion-button block class="buttonhome" [routerLink]="['/signup']">
+             Create
+           </ion-button>
+           <ion-button style="margin-left: 0.5rem;" block (click)="login()" class="buttonhome">
+             Login
+           </ion-button>
+         </div>
+       </div>
+     </section>
+ </ion-content>
+<!-- </div> -->
+<!-- <div class="overlay">
+ <div class="inner">
+ </div>
+</div>  -->
+<!-- </section> -->

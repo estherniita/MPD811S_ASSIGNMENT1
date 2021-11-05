@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login" color="pinkish">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class=" signup no-scroll ion-padding" fullscreen="true" scroll-y="true">
+    <h1 class="ion-text-center">
+      Create an account
+    </h1>
+    <!-- form -->
+    <form [formGroup]="signupForm" class="ion-padding">
+
+      <div class="outter">
+        <ion-input required formControlName="email" placeholder="Email address" type="email" required>
+        </ion-input>
+      </div>
+      <div *ngIf="signupForm.hasError('required', 'email') && submitted" class="invalid-feedback">
+        Email address is required
+      </div>
+
+      <div *ngIf="signupForm.hasError('email', 'email')" class="invalid-feedback">
+        Must be a valid email address
+      </div>
+
+
+      <div class="outter">
+        <ion-input required formControlName="pwd1" placeholder="Password" type="password" required>
+        </ion-input>
+      </div>
+
+      <div *ngIf="signupForm.hasError('required', 'pwd1') && submitted" class="invalid-feedback">
+        Password is requred
+      </div>
+      <div *ngIf="signupForm.hasError('pattern', 'pwd1') && submitted" class="invalid-feedback">
+        Password must contain atleast one number and an
+        upper case character
+      </div>
+
+      <div class="outter">
+        <ion-input required formControlName="pwd2" placeholder="Confirm password" type="password" required>
+        </ion-input>
+      </div>
+
+      <div *ngIf="signupForm.hasError('required', 'pwd2') && submitted" class="invalid-feedback">
+        Password is required
+      </div>
+      <div *ngIf="signupForm.hasError('pattern', 'pwd2') && submitted" class="invalid-feedback">
+        Password must contain atleast one number and an
+        upper case character
+      </div>
+      <div *ngIf="signupForm.hasError('minlength', 'pwd2') && submitted" class="invalid-feedback">
+        Your password must be at least 8 characters
+      </div>
+      <div *ngIf="signupForm.hasError('mustMatch', 'pwd2') && submitted" class="invalid-feedback">
+        Passwords do not match
+      </div>
+
+    </form>
+
+    <div class="buttons">
+      <div class="ion-text-center">
+        <ion-button class="login" color="buttonblue" [routerLink]="['/login']">
+          <!-- <ion-icon slot="start" name="arrow-redo-outline" color="primary"></ion-icon> -->
+          Cancel
+        </ion-button>
+      </div>
+      <div class="ion-text-center">
+        <ion-button class="signup" (click)="signup()" color="buttonblue">
+          <!-- <ion-icon slot="start" class="inner-icon" name="person-outline"></ion-icon> -->
+          Signup
+        </ion-button>
+      </div>
+    </div>
+
+    <div class="terms ion-padding">
+      <p class="ion-text-left" [routerLink]="['/terms']">Read our terms of use</p>
+    </div>
+</ion-content>
